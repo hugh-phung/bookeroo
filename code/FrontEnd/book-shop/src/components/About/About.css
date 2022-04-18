@@ -1,0 +1,17 @@
+.main-wrapper-about {
+    padding-top: 20px;
+    min-height: 500px;
+}
+
+.aboutBody
+{
+    padding-top: 4%;
+    font-size: 24px;
+}
+
+.aboutTeam
+{
+    padding-top: 2%;
+    font-size: 24px;
+
+}

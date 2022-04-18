@@ -1,0 +1,9 @@
+.addListing {
+    padding-bottom: 20px;
+    float: right;
+}
+
+.main-wrapper-listings-page {
+    padding-top: 20px;
+    min-height: 500px;
+}

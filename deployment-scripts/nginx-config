@@ -1,0 +1,25 @@
+server {
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+    
+    location /api/users {
+        proxy_pass http://localhost:8080;
+    }
+	
+	location /api/books {
+        proxy_pass http://localhost:8081;
+    }
+	
+	location /api/listings {
+        proxy_pass http://localhost:8082;
+    }
+	
+	location /api/transactions {
+        proxy_pass http://localhost:8083;
+    }
+	
+	location /api/carts {
+        proxy_pass http://localhost:8084;
+    }
+}

@@ -1,0 +1,13 @@
+.backSubmit {
+    display:flex;
+}
+
+.buttonPadding {
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+.main-wrapper-management-page {
+    padding-top: 20px;
+    min-height: 500px;
+}

@@ -1,0 +1,60 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/java:8-jdk
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "$KEY_FINGERPRINT"
+
+      - run:
+          name: add-ec2-webserver-to-known-hosts
+          command: cat ~/project/deployment-scripts/ec2-ssh-host-fingerprint >> ~/.ssh/known_hosts
+
+      - run:
+          name: build-loginmicroservices
+          command: |
+            cd ~/project/code/BackEnd/loginmicroservices/
+            source mvnw package
+
+      - run:
+          name: build-bookmicroservices
+          command: |
+            cd ~/project/code/BackEnd/bookmicroservices/
+            source mvnw package
+
+      - run:
+          name: build-listingmicroservices
+          command: |
+            cd ~/project/code/BackEnd/listingmicroservices/
+            source mvnw package
+
+      - run:
+          name: build-cartmicroservices
+          command: |
+            cd ~/project/code/BackEnd/cartmicroservices/
+            source mvnw package
+
+      - run:
+          name: build-transactionmicroservices
+          command: |
+            cd ~/project/code/BackEnd/transactionmicroservices/
+            source mvnw package
+
+      - run:
+          name: scp-to-ec2
+          command: |
+            scp ~/project/code/BackEnd/loginmicroservices/target/*.jar ec2-user@$EC2_DNS:~/loginmicroservices/app.jar
+            scp ~/project/code/BackEnd/bookmicroservices/target/*.jar ec2-user@$EC2_DNS:~/bookmicroservices/app.jar
+            scp ~/project/code/BackEnd/listingmicroservices/target/*.jar ec2-user@$EC2_DNS:~/listingmicroservices/app.jar
+            scp ~/project/code/BackEnd/cartmicroservices/target/*.jar ec2-user@$EC2_DNS:~/cartmicroservices/app.jar
+            scp ~/project/code/BackEnd/transactionmicroservices/target/*.jar ec2-user@$EC2_DNS:~/transactionmicroservices/app.jar
+            scp -r ~/project/code/FrontEnd/book-shop/ ec2-user@$EC2_DNS:~/frontend/
+
+      - run:
+          name: webserver-docker-restart
+          command: ssh ec2-user@$EC2_DNS 'source docker-restart'
+

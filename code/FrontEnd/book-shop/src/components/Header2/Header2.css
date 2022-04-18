@@ -1,0 +1,30 @@
+.logo {
+    font-size: 70px;
+    color: cadetblue;
+}
+
+.header2 {
+    /* background-color: cadetblue; */
+    margin-top: 4%;
+
+}
+
+/* .search {
+    display:flex;
+    /* float:center; */
+    /* flex-direction: column-reverse;
+    
+    margin-top: auto;
+} */
+
+/* .search {
+    margin-left: 70%;
+} */
+
+.cart {
+    padding-right: 2px;
+    padding-left: 3%;
+
+}
+
+

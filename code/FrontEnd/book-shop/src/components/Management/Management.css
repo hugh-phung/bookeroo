@@ -1,0 +1,19 @@
+.paddingContainer
+{
+    padding-bottom: 2%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.buttonCustom
+{
+    color: cadetblue;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+
+.main-wrapper-management-page {
+    padding-top: 20px;
+    min-height: 500px;
+}

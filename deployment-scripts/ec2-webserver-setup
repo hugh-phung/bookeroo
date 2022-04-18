@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export EC2_DNS=
+export PATH_TO_KEY=
+
+
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo yum update -y'
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo yum install docker -y'
+
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo systemctl enable docker'
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo systemctl start docker'
+
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo amazon-linux-extras install nginx1 -y'
+
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo systemctl enable nginx'
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo systemctl start nginx'
+
+source scp-to-ec2
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo cp nginx-config /etc/nginx/conf.d/default.conf'
+ssh -i "$PATH_TO_KEY" ec2-user@"$EC2_DNS" 'sudo nginx -s reload'

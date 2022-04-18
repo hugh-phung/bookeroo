@@ -1,0 +1,68 @@
+.imageContainer 
+{
+    max-width: 400px;
+    min-height: 300px;
+}
+
+.main-wrapper-book-page {
+    padding-top: 20px;
+    min-height: 500px;
+}
+
+.content
+{
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-right: 3%;
+    min-width: 50%;
+    max-width: 50%;
+    overflow: hidden;
+}
+.title
+{
+    font-size: 40px;
+}
+
+.buyContainer
+{
+    float:right;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    width: 300px;
+    max-height: 200px;
+}
+.price
+{
+    font-size: 40px;
+    padding: 5%;
+
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    font-weight: bold;
+}
+
+.button
+{
+    display:flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.layout
+{
+    display:flex;
+}
+
+.createListing
+{
+    font-size: 20px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 70%;
+
+}

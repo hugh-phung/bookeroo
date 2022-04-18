@@ -1,0 +1,13 @@
+.footer {
+    position:relative;
+    margin-top: 10%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    min-height: 50px;
+    margin-top: 10%;
+    text-decoration: none;
+    color: white;
+    background-color:cadetblue;
+}

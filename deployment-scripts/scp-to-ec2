@@ -1,0 +1,10 @@
+#!/bin/bash
+
+scp -i "$PATH_TO_KEY" -r dockerfiles/loginmicroservices/ ec2-user@"$EC2_DNS":~/
+scp -i "$PATH_TO_KEY" -r dockerfiles/bookmicroservices/ ec2-user@"$EC2_DNS":~/
+scp -i "$PATH_TO_KEY" -r dockerfiles/listingmicroservices/ ec2-user@"$EC2_DNS":~/
+scp -i "$PATH_TO_KEY" -r dockerfiles/cartmicroservices/ ec2-user@"$EC2_DNS":~/
+scp -i "$PATH_TO_KEY" -r dockerfiles/transactionmicroservices/ ec2-user@"$EC2_DNS":~/
+scp -i "$PATH_TO_KEY" -r dockerfiles/frontend/ ec2-user@"$EC2_DNS":~/
+scp -i "$PATH_TO_KEY" nginx-config ec2-user@"$EC2_DNS":~/nginx-config
+scp -i "$PATH_TO_KEY" ec2-docker-restart ec2-user@"$EC2_DNS":~/docker-restart

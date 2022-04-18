@@ -1,0 +1,68 @@
+.main-wrapper-home-page {
+    padding-top: 20px;
+    min-height: 500px;
+}
+
+.bookPrice
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.bookCardContent
+{
+    display:flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+.bookCardTitle
+{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cards
+{
+    padding-top: 10%;
+}
+
+.sideBar
+{
+    padding-right: 15%;
+    max-width: 300px;
+    min-width: 300px;
+
+}
+
+.container
+{
+    max-width: '50%';
+}
+
+.homeImage
+{
+    max-width: 100%;
+}
+
+
+.booksDisplay
+{
+    margin-top: 3%;
+}
+
+.tableList
+{
+    font-size: 20px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.tableListItem
+{
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}

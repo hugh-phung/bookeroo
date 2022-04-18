@@ -1,0 +1,17 @@
+.categories {
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    padding-top: 4px;
+    padding-bottom: 4px; 
+    margin-top: 1%;
+    margin-bottom: 2%;
+    background-color:cadetblue;
+}
+
+.navItems {
+    font-size: 25px;
+    color:white;
+}
+
+
